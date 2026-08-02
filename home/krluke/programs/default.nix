@@ -4,5 +4,6 @@
     ./git.nix
     ./neovim.nix
     ./alacritty.nix
+    ./yazi.nix
   ];
 }

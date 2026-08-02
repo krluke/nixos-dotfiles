@@ -5,7 +5,6 @@
     wget
     fuzzel
     fastfetch
-    yazi
     opencode
   ];
   programs.firefox.enable = true;
