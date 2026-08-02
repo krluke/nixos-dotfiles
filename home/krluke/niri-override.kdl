@@ -1,0 +1,3 @@
+// Custom niri overrides managed by home-manager
+// Fixes transparency rendering for semi-transparent windows (like alacritty)
+prefer-no-csd
