@@ -1,0 +1,32 @@
+// Custom niri keybinds — managed in dotfiles, live-reloaded by niri
+// This file is included at the END of config.kdl so its binds override defaults on conflicts.
+// (Per niri docs: "binds will override previously-defined conflicting keys" — last definition wins.)
+
+binds {
+    // === App launches (override defaults with custom titles) ===
+    Mod+T hotkey-overlay-title="Terminal: alacritty" { spawn "alacritty"; }
+    Mod+D hotkey-overlay-title="App Launcher: fuzzel" { spawn "fuzzel"; }
+    Mod+B hotkey-overlay-title="Browser: firefox" { spawn "firefox"; }
+    Mod+E hotkey-overlay-title="Yazi file manager" { spawn "alacritty" "-e" "yazi"; }
+
+    // === Screenshots (require grim, slurp, wl-clipboard) ===
+    Print hotkey-overlay-title="Screenshot: full screen to clipboard" {
+        spawn-sh "grim - | wl-copy";
+    }
+    Shift+Print hotkey-overlay-title="Screenshot: region to clipboard" {
+        spawn-sh "grim -g \"$(slurp)\" - | wl-copy";
+    }
+    Ctrl+Print hotkey-overlay-title="Screenshot: region to file" {
+        spawn-sh "grim -g \"$(slurp)\" ~/Pictures/Screenshots/Screenshot-$(date +%Y%m%d-%H%M%S).png";
+    }
+
+    // === Session management ===
+    Mod+Shift+Q hotkey-overlay-title="Quit niri session" {
+        spawn "niri" "msg" "action" "quit";
+    }
+
+    // === Window management extras ===
+    Mod+Shift+F hotkey-overlay-title="Toggle floating" {
+        toggle-window-floating;
+    }
+}

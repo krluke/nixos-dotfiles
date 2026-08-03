@@ -1,0 +1,36 @@
+// Custom niri layout — managed in dotfiles, live-reloaded by niri
+// Kanagawa-inspired colors to match waybar + yazi theme
+
+layout {
+    // Gaps between windows (in logical pixels)
+    gaps 8
+
+    // Focus ring (drawn only around the focused window)
+    focus-ring {
+        on
+        width 3
+        active-color "#7AA2F7"     // Kanagawa blue
+        inactive-color "#727169"   // Kanagawa comment gray
+    }
+
+    // Border (drawn around all windows) — disabled by default
+    // Uncomment `on` and adjust colors if you want visible borders
+    border {
+        off
+        // on
+        // width 2
+        // active-color "#7AA2F7"
+        // inactive-color "#727169"
+    }
+
+    // Center focused column only when it overflows the screen
+    center-focused-column "on-overflow"
+
+    // Struts (margins from screen edges) — uncomment to add
+    // struts {
+    //     left 0
+    //     right 0
+    //     top 0
+    //     bottom 0
+    // }
+}

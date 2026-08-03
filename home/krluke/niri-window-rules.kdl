@@ -1,0 +1,32 @@
+// Custom niri window rules — managed in dotfiles, live-reloaded by niri
+// Window rules are inserted at the position of the include line.
+
+// Float Firefox picture-in-picture player
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+// Float pulseaudio volume control utility
+window-rule {
+    match app-id="pavucontrol"
+    open-floating true
+}
+
+// Float fuzzel (app launcher)
+window-rule {
+    match app-id="fuzzel"
+    open-floating true
+}
+
+// Open Firefox maximized
+window-rule {
+    match app-id="firefox$"
+    open-maximized true
+}
+
+// Default column width for Alacritty (wide enough for two-column work)
+window-rule {
+    match app-id="Alacritty"
+    default-column-width { fixed 1200; }
+}

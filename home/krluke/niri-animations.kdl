@@ -1,0 +1,53 @@
+// Custom niri animations — managed in dotfiles, live-reloaded by niri
+// Uses niri's native animation syntax: easing and spring types
+// Reference: https://niri-wm.github.io/niri/Configuration:-Animations.html
+
+animations {
+    // Uncomment to disable all animations
+    // off
+
+    // Animation slowdown factor for debugging (1.0 = normal speed)
+    // slowdown 1.0
+
+    // Workspace switching (recommended: spring for touchpad gesture velocity)
+    workspace-switch {
+        spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
+    }
+
+    // Window opening
+    window-open {
+        duration-ms 200
+        curve "ease-out-cubic"
+    }
+
+    // Window closing
+    window-close {
+        duration-ms 200
+        curve "ease-out-cubic"
+    }
+
+    // Horizontal camera view movement (scrolling between windows)
+    horizontal-view-movement {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+
+    // Individual window movement (within workspace, between columns)
+    window-movement {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+
+    // Window resize
+    window-resize {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+
+    // Config notification (parse errors, new default config)
+    config-notification-open-close {
+        spring damping-ratio=0.6 stiffness=1000 epsilon=0.001
+    }
+
+    // Overview open/close zoom
+    overview-open-close {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+}
